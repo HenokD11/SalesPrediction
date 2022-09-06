@@ -62,3 +62,31 @@ class DataCleaner:
 
         except:
             print("Failed to separate the date-time column")
+
+    def separate_date_column(self, date_column: str, drop_date=True) -> pd.DataFrame:
+        try:
+            date_index = self.df.columns.get_loc(date_column)
+            self.df.insert(date_index + 1, 'Year', self.df[date_column].apply(
+                lambda x: x.date().year))
+            self.df.insert(date_index + 2, 'Month', self.df[date_column].apply(
+                lambda x: x.date().month))
+            self.df.insert(date_index + 3, 'Day',
+                           self.df[date_column].apply(lambda x: x.date().day))
+
+            if(drop_date):
+                self.df = self.df.drop(date_column, axis=1)
+        except:
+            print("Failed to separate the date to its components")
+
+    def change_column_to_date_type(self, col_name: str) -> None:
+        try:
+            self.df[col_name] = pd.to_datetime(self.df[col_name])
+        except:
+            print('failed to change column to Date Type')
+        self.logger.info(
+            f"Successfully changed column {col_name} to Date Type")
+
+    def remove_nulls(self) -> pd.DataFrame:
+        return self.df.dropna()
+
+    
