@@ -89,4 +89,44 @@ class DataCleaner:
     def remove_nulls(self) -> pd.DataFrame:
         return self.df.dropna()
 
-    
+    def add_season_col(self, month_col: str) -> None:
+        # helper function
+        def get_season(month: int):
+            if(month <= 2 or month == 12):
+                return 'Winter'
+            elif(month > 2 and month <= 5):
+                return 'Spring'
+            elif(month > 5 and month <= 8):
+                return 'Summer'
+            else:
+                return 'Autumn'
+
+        try:
+            month_index = self.df.columns.get_loc(month_col)
+            self.df.insert(month_index + 1, 'Season',
+                           self.df[month_col].apply(get_season))
+
+        except:
+            print("Failed to add season column")
+        self.logger.info(f"Successfully added season column to {month_col}")
+
+    def change_columns_type_to(self, cols: list, data_type: str) -> pd.DataFrame:
+        """
+        Returns a DataFrame where the specified columns data types are changed to the specified data type
+        Parameters
+        ----------
+        cols:
+            Type: list
+        data_type:
+            Type: str
+        Returns
+        -------
+        pd.DataFrame
+        """
+        try:
+            for col in cols:
+                self.df[col] = self.df[col].astype(data_type)
+        except:
+            print('Failed to change columns type')
+        self.logger.info(f"Successfully changed columns type to {data_type}")
+        return self.df
