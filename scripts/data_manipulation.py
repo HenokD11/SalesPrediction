@@ -57,3 +57,31 @@ class DataManipulator:
     # And 3 days for public holiday
     # get state holiday list
     # a = public holiday, b = Easter holiday, c = Christmas, 0 = None
+
+    def affect_list(self, change_list, interval, duration, index):
+        start_pt = int(index-duration/2) - interval
+        try:
+            for index in range(start_pt, start_pt + interval):
+                change_list[index] = 'before'
+            for index in range(start_pt + interval, start_pt + interval + duration):
+                change_list[index] = 'during'
+            for index in range(start_pt + interval + duration, start_pt + interval + duration + interval):
+                change_list[index] = 'after'
+        except:
+            pass
+
+        return change_list
+
+    def modify_holiday_list(self, holiday_list: list) -> list:
+        new_index = ["neither"] * len(holiday_list)
+        for index, value in enumerate(holiday_list):
+            if value == 'a':  # public holiday
+                self.affect_list(new_index, 3, 1, index)
+            elif value == 'b':  # Easter
+                self.affect_list(new_index, 10, 50, index)
+            elif value == 'c':  # christmas
+                self.affect_list(new_index, 5, 12, index)
+            else:
+                pass
+
+        return new_index
