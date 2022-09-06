@@ -85,3 +85,74 @@ class DataManipulator:
                 pass
 
         return new_index
+
+
+     def add_number_of_days_to_holiday(self, state_holiday_col: str):
+        try:
+            date_index = self.df.columns.get_loc(state_holiday_col)
+
+            modified_index = self.modify_holiday_list(
+                self.df[state_holiday_col].values.tolist())
+            days_to_holiday_index = []
+            i = 0
+            last_holiday_index = 0
+            for index, value in enumerate(modified_index):
+                if(index == len(modified_index) - 1):
+                    for j in range(last_holiday_index+1, len(modified_index)):
+                        days_to_holiday_index.append(0)
+                elif(value == 'neither' or value == 'after' or value == 'before'):
+                    i += 1
+                elif(value == 'during' and i != 0):
+                    last_holiday_index = index
+                    for j in range(i):
+                        days_to_holiday_index.append(i)
+                        i = i-1
+                    days_to_holiday_index.append(0)
+                    i = 0
+                elif(value == 'during' and i == 0):
+                    days_to_holiday_index.append(i)
+                    last_holiday_index = index
+                    continue
+
+            self.df.insert(date_index + 1, 'DaysToHoliday',
+                           days_to_holiday_index)
+
+            self.logger.info("Successfully Added DaysToHoliday Column")
+
+        except Exception as e:
+            self.logger.exception("Failed to Add DaysToHoliday Column")
+
+    def add_number_of_days_after_holiday(self, state_holiday_col: str):
+        try:
+            date_index = self.df.columns.get_loc(state_holiday_col)
+
+            modified_index = self.modify_holiday_list(
+                self.df[state_holiday_col].values.tolist())
+
+            days_to_after_holiday_index = [0] * len(modified_index)
+            i = 0
+            last_holiday_index = modified_index.index('during')
+
+            for index, value in enumerate(modified_index):
+                if(value == 'before'):
+                    if(index > last_holiday_index):
+                        i += 1
+                        days_to_after_holiday_index[index] = i
+                    continue
+                elif(value == 'after'):
+                    i += 1
+                    days_to_after_holiday_index[index] = i
+                elif(value == 'during'):
+                    last_holiday_index = index
+                    i = 0
+                    continue
+
+            days_to_after_holiday_index.insert(0, 0)
+
+            self.df.insert(date_index + 1, 'DaysAfterHoliday',
+                           days_to_after_holiday_index[:-1])
+
+            self.logger.info("Successfully Added DaysAfterHoliday Column")
+
+        except Exception as e:
+            self.logger.exception("Failed to Add DaysAfterHoliday Column")
