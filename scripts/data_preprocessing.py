@@ -35,4 +35,4 @@ class data_preProcessing_script:
             self.df.rename(
                 columns={col: f'{col[:-7]}(MegaBytes)'}, inplace=True)
         print('Byte to MB change error')
-        return self.
+        return self.df
