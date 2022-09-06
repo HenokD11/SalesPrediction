@@ -57,5 +57,23 @@ class data_preProcessing_script:
         self.logger.info(f"Showing correlation")
         return self.df.corr()
 
-    
+    def collective_grouped_mean(self, colomnName: str) -> pd.DataFrame:
+        groupby_colomnName = self.df.groupby(colomnName)
+        self.logger.info(f"Collective grouped mean")
+        return groupby_colomnName.mean()
+
+    def list_coloumn_names(self) -> pd.DataFrame:
+        self.logger.info(f"Showing coloumn names")
+        return self.df.columns
+
+    def colums_WithMissingValue(self):
+        miss = []
+        dff = self.df.isnull().any()
+        summ = 0
+        for col in dff:
+            if col == True:
+                miss.append(dff.index[summ])
+            summ += 1
+        self.logger.info(f"Colums with missing values: {miss}")
+        return miss
     
