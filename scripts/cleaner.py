@@ -198,3 +198,195 @@ class DataCleaner:
 
         except:
             print('Failed to add columns from other dataframe')
+
+    def fill_non_numeric_values(self, missing_cols: list, ffill: bool = True, bfill: bool = False) -> pd.DataFrame:
+        """
+        Returns a DataFrame where non-numeric columns are filled with forward or backward fill
+        Parameters
+        ----------
+        missing_cols:
+            Type: list
+        ffill:
+            Type: bool
+            Default value = True
+        bfill:
+            Type: bool
+            Default value = False
+        Returns
+        -------
+        pd.DataFrame
+        """
+        for col in missing_cols:
+            if(ffill == True and bfill == True):
+                self.df[col].fillna(method='ffill', inplace=True)
+                self.df[col].fillna(method='bfill', inplace=True)
+
+            elif(ffill == True and bfill == False):
+                self.df[col].fillna(method='ffill', inplace=True)
+
+            elif(ffill == False and bfill == True):
+                self.df[col].fillna(method='bfill', inplace=True)
+
+            else:
+                self.df[col].fillna(method='bfill', inplace=True)
+                self.df[col].fillna(method='ffill', inplace=True)
+
+        return self.df
+
+    def create_new_columns_from(self, new_col_name: str, col1: str, col2: str, func) -> pd.DataFrame:
+        """
+        Returns a DataFrame where a new column is created using a function on two specified columns
+        Parameters
+        ----------
+        new_col_name:
+            Type: str
+        col1:
+            Type: str
+        col2:
+            Type: str
+        func:
+            Type: function
+        Returns
+        -------
+        pd.DataFrame
+        """
+        try:
+            self.df[new_col_name] = func(self.df[col1], self.df[col2])
+        except:
+            print("failed to create new column with the specified function")
+
+        return self.df
+
+    def convert_bytes_to_megabytes(self, columns: list) -> pd.DataFrame:
+        """
+        Returns a DataFrame where columns value is changed from bytes to megabytes
+        Args:
+        -----
+        columns: 
+            Type: list
+        Returns:
+        --------
+        pd.DataFrame
+        """
+        try:
+            megabyte = 1*10e+5
+            for col in columns:
+                self.df[col] = self.df[col] / megabyte
+                self.df.rename(
+                    columns={col: f'{col[:-7]}(MegaBytes)'}, inplace=True)
+
+        except:
+            print('failed to change values to megabytes')
+
+        return self.df
+
+    def fix_outlier_columns(self, columns: list) -> pd.DataFrame:
+        """
+        Returns a DataFrame where outlier of the specified columns is fixed
+        Parameters
+        ----------
+        columns:
+            Type: list
+        Returns
+        -------
+        pd.DataFrame
+        """
+        try:
+            for column in columns:
+                self.df[column] = np.where(self.df[column] > self.df[column].quantile(
+                    0.95), self.df[column].median(), self.df[column])
+        except:
+            print("Cant fix outliers for each column")
+
+    def replace_outlier_with_median(self, dataFrame: pd.DataFrame, feature: Str) -> pd.DataFrame:
+
+        Q1 = dataFrame[feature].quantile(0.25)
+        Q3 = dataFrame[feature].quantile(0.75)
+        median = dataFrame[feature].quantile(0.50)
+
+        IQR = Q3 - Q1
+
+        upper_whisker = Q3 + (1.5 * IQR)
+        lower_whisker = Q1 - (1.5 * IQR)
+
+        dataFrame[feature] = np.where(
+            dataFrame[feature] > upper_whisker, median, dataFrame[feature])
+        dataFrame[feature] = np.where(
+            dataFrame[feature] < lower_whisker, median, dataFrame[feature])
+        self.logger.info(f"Outlier for {feature} is fixed")
+
+        return dataFrame
+
+    def standardized_column(self, columns: list, new_name: list, func) -> pd.DataFrame:
+        """
+        Returns a DataFrame where specified columns are standardized based on a given function and given new names after
+        Parameters
+        ----------
+        columns:
+            Type: list
+        new_name:
+            Type: list
+        func:
+            Type: function
+        Returns
+        -------
+        pd.DataFrame
+        """
+        try:
+            assert(len(columns) == len(new_name))
+            for index, col in enumerate(columns):
+                self.df[col] = func(self.df[col])
+                self.df.rename(columns={col: new_name[index]}, inplace=True)
+            self.logger.info(f"Columns are standardized")
+        except AssertionError:
+            print('size of columns and names provided is not equal')
+
+        except:
+            print('standardization failed')
+        return self.df
+
+    def optimize_df(self) -> pd.DataFrame:
+        """
+        Returns the DataFrames information after all column data types are optimized (to a lower data type)
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        pd.DataFrame
+        """
+        data_types = self.df.dtypes
+        optimizable = ['float64', 'int64']
+        try:
+            for col in data_types.index:
+                if(data_types[col] in optimizable):
+                    if(data_types[col] == 'float64'):
+                        # downcasting a float column
+                        self.df[col] = pd.to_numeric(
+                            self.df[col], downcast='float')
+                    elif(data_types[col] == 'int64'):
+                        # downcasting an integer column
+                        self.df[col] = pd.to_numeric(
+                            self.df[col], downcast='unsigned')
+            self.logger.info(f"DataFrame optimized")
+            return self.df
+
+        except:
+            print('Failed to optimize')
+
+    def save_clean_data(self, name: str):
+        """
+        The objects dataframe gets saved with the specified name 
+        Parameters
+        ----------
+        name:
+            Type: str
+        Returns
+        -------
+        None
+        """
+        try:
+            self.df.to_csv(name, index=False)
+            self.logger.info(f"DataFrame saved")
+        except:
+            print("Failed to save data")
