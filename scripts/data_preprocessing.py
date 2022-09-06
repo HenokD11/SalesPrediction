@@ -7,7 +7,7 @@ sys.path.insert(0, '../scripts/')
 sys.path.insert(0, '../logs/')
 sys.path.append(os.path.abspath(os.path.join('..')))
 
-from log_help import App_Logger
+from log_helper import App_Logger
 
 app_logger = App_Logger("logs/data_preProcessing.log").get_app_logger()
 
@@ -36,3 +36,26 @@ class data_preProcessing_script:
                 columns={col: f'{col[:-7]}(MegaBytes)'}, inplace=True)
         print('Byte to MB change error')
         return self.df
+
+    def show_datatypes(self) -> pd.DataFrame:
+        self.logger.info(f"Showing datatypes")
+        return self.df.dtypes
+
+    def show_data_description(self) -> pd.DataFrame:
+        self.logger.info(f"Showing data description")
+        return self.df.describe()
+
+    def show_data_information(self) -> pd.DataFrame:
+        self.logger.info(f"Showing data information")
+        return self.df.info()
+
+    def show_statistical_info(self) -> pd.DataFrame:
+        self.logger.info(f"Showing statistical info")
+        return self.df.agg(['mean'])
+
+    def show_correlation(self) -> pd.DataFrame:
+        self.logger.info(f"Showing correlation")
+        return self.df.corr()
+
+    
+    
