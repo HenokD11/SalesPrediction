@@ -37,3 +37,28 @@ class DataCleaner:
         """
         self.df.drop(columns, axis=1, inplace=True)
         return self.df
+
+    def separate_date_time_column(self, column: str, col_prefix_name: str) -> pd.DataFrame:
+        """
+        Returns a DataFrame where the specified columns is split to date and time new columns adding a prefix string to both
+        Parameters
+        ----------
+        column:
+            Type: str
+        col_prefix_name:
+            Type: str
+        Returns
+        -------
+        pd.DataFrame
+        """
+        try:
+
+            self.df[f'{col_prefix_name}Date'] = pd.to_datetime(
+                self.df[column]).dt.date
+            self.df[f'{col_prefix_name}Time'] = pd.to_datetime(
+                self.df[column]).dt.time
+
+            return self.df
+
+        except:
+            print("Failed to separate the date-time column")
