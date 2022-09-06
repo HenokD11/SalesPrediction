@@ -130,3 +130,71 @@ class DataCleaner:
             print('Failed to change columns type')
         self.logger.info(f"Successfully changed columns type to {data_type}")
         return self.df
+
+    def remove_single_value_columns(self, unique_value_counts: pd.DataFrame) -> pd.DataFrame:
+        """
+        Returns a DataFrame where columns with a single value are removed
+        Parameters
+        ----------
+        unique_value_counts:
+            Type: pd.DataFrame
+        Returns
+        -------
+        pd.DataFrame
+        """
+        drop_cols = list(
+            unique_value_counts.loc[unique_value_counts['Unique Value Count'] == 1].index)
+        return self.df.drop(drop_cols, axis=1, inplace=True)
+
+    def remove_duplicates(self) -> pd.DataFrame:
+        """
+        Returns a DataFrame where duplicate rows are removed
+        Parameters
+        ----------
+        None
+        Returns
+        -------
+        pd.DataFrame
+        """
+        removables = self.df[self.df.duplicated()].index
+        return self.df.drop(index=removables, inplace=True)
+
+    def fill_numeric_values(self, missing_cols: list, acceptable_skewness: float = 5.0) -> pd.DataFrame:
+        """
+        Returns a DataFrame where numeric columns are filled with either median or mean based on their skewness
+        Parameters
+        ----------
+        missing_cols:
+            Type: list
+        acceptable_skewness:
+            Type: float
+            Default value = 5.0
+        Returns
+        -------
+        pd.DataFrame
+        """
+        df_skew_data = self.df[missing_cols]
+        df_skew = df_skew_data.skew(axis=0, skipna=True)
+        for i in df_skew.index:
+            if(df_skew[i] < acceptable_skewness and df_skew[i] > (acceptable_skewness * -1)):
+                value = self.df[i].mean()
+                self.df[i].fillna(value, inplace=True)
+            else:
+                value = self.df[i].median()
+                self.df[i].fillna(value, inplace=True)
+
+        return self.df
+
+    def add_columns_from_another_df_using_column(self, from_df: pd.DataFrame, base_col: str, add_columns: list) -> pd.DataFrame:
+        try:
+            new_df = self.df.copy(deep=True)
+            from_df.sort_values(base_col, ascending=True, inplace=True)
+            for col in add_columns:
+                col_index = from_df.columns.tolist().index(col)
+                new_df[col] = new_df[base_col].apply(
+                    lambda x: from_df.iloc[x-1, col_index])
+
+            return new_df
+
+        except:
+            print('Failed to add columns from other dataframe')
