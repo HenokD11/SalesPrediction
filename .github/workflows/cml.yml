@@ -1,10 +1,8 @@
-name: model-pipeline
-on:
-  push:
-    branches:
-      - main
+name: salesPrediction
+on: [push]
 jobs:
   run:
+    permissions: write-all
     runs-on: ubuntu-latest
     # optionally use a convenient Ubuntu LTS + DVC + CML image
     # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
@@ -21,12 +19,23 @@ jobs:
       - name: Train model
         run: |
           # Your ML workflow goes here
-          sudo pip install -r requirements.txt
-          sudo python train.py
+          pip install -r requirements.txt
+          #python train/logistic_regression.py
+          #python train/decisiontree.py
+          #python train/random_forest.py
+          python train/random_forest.py
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          cat results.txt >> report.md
-          cml send-comment report.md
+          # Random Regression
+          echo "### Model Metrics" > report.md
+          cat train/metrics.txt >> report.md
+          echo "### Data Visualization" >> report.md
+          echo "Predicted vs. actual accuracy" >> report.md
+          cml-publish train/prediction.png --md >> report.md
+          echo "Feature Importance" >> report.md
+          cml-publish train/feature_importance.png --md >> report.md
+          
+          cml-send-comment report.md
