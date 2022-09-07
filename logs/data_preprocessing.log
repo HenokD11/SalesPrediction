@@ -254,3 +254,7 @@
 2022-09-07 18:50:46,116 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
 2022-09-07 18:50:46,116 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
 2022-09-07 18:50:46,116 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
+2022-09-07 20:46:14,314 : INFO : log_helper : Successfully changed columns type to int64
+2022-09-07 20:46:14,718 : INFO : log_helper : DataFrame optimized
+2022-09-07 20:47:00,318 : INFO : log_helper : Successfully changed columns type to int64
+2022-09-07 20:47:00,543 : INFO : log_helper : DataFrame optimized
