@@ -177,3 +177,80 @@
 2022-09-07 11:50:56,284 : INFO : log_helper : Showing datatypes
 2022-09-07 11:50:56,284 : INFO : log_helper : Showing datatypes
 2022-09-07 11:50:56,284 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:06,122 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,122 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,173 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,173 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,173 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,226 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,226 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,226 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,226 : INFO : log_helper : Showing data information
+2022-09-07 16:03:06,474 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 16:03:06,474 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 16:03:06,474 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 16:03:06,474 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 16:03:06,734 : INFO : log_helper : Colums with missing values: []
+2022-09-07 16:03:06,734 : INFO : log_helper : Colums with missing values: []
+2022-09-07 16:03:06,734 : INFO : log_helper : Colums with missing values: []
+2022-09-07 16:03:06,734 : INFO : log_helper : Colums with missing values: []
+2022-09-07 16:03:06,775 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 16:03:06,775 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 16:03:06,775 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 16:03:06,775 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 16:03:06,875 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:06,875 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:06,875 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:06,875 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,279 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,279 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,279 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,279 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,355 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,355 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,355 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,355 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,514 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,514 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,514 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,514 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,594 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,594 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,594 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,594 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,890 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,890 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,890 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,890 : INFO : log_helper : Showing missing percentage
+2022-09-07 16:03:07,943 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,943 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,943 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,943 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,994 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,994 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,994 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:07,994 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,069 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,069 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,069 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,069 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,261 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,261 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,261 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,261 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,314 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,314 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,314 : INFO : log_helper : Showing datatypes
+2022-09-07 16:03:08,314 : INFO : log_helper : Showing datatypes
+2022-09-07 17:26:56,050 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-07 17:26:56,050 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-07 17:26:56,050 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-07 17:26:56,050 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-07 17:27:32,411 : INFO : log_helper : Outlier for CompetitionDistance is fixed
+2022-09-07 17:27:32,411 : INFO : log_helper : Outlier for CompetitionDistance is fixed
+2022-09-07 17:27:32,411 : INFO : log_helper : Outlier for CompetitionDistance is fixed
+2022-09-07 17:27:32,411 : INFO : log_helper : Outlier for CompetitionDistance is fixed
+2022-09-07 17:27:32,414 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
+2022-09-07 17:27:32,414 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
+2022-09-07 17:27:32,414 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
+2022-09-07 17:27:32,414 : INFO : log_helper : Outlier for CompetitionOpenSinceMonth is fixed
