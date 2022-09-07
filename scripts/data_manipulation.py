@@ -155,4 +155,107 @@ class DataManipulator:
             self.logger.info("Successfully Added DaysAfterHoliday Column")
 
         except Exception as e:
+
             self.logger.exception("Failed to Add DaysAfterHoliday Column")
+
+    def return_day_status_in_month(self, day: int) -> int:
+        # conside 1 is beginning of month, 2 is middle of the month and 3 is end of the month
+        if(day <= 10):
+            return 1
+        elif(day > 10 and day <= 20):
+            return 2
+        else:
+            return 3
+
+    def add_month_timing(self, day_col: str) -> pd.DataFrame:
+        try:
+            date_index = self.df.columns.get_loc(day_col)
+            self.df.insert(date_index + 1, 'MonthTiming',
+                           self.df[day_col].apply(self.return_day_status_in_month))
+
+            self.logger.info("Successfully Added MonthTiming Column")
+
+        except Exception as e:
+            self.logger.exception("Failed to Add MonthTiming Column")
+
+    def get_season(self, month: int):
+        if(month <= 2 or month == 12):
+            return 'Winter'
+        elif(month > 2 and month <= 5):
+            return 'Spring'
+        elif(month > 5 and month <= 8):
+            return 'Summer'
+        else:
+            return 'Autumn'
+
+    def add_season(self, month_col: str) -> pd.DataFrame:
+        try:
+            date_index = self.df.columns.get_loc(month_col)
+            self.df.insert(date_index + 1, 'Season',
+                           self.df[month_col].apply(self.get_season))
+
+            self.logger.info("Successfully Added Season Column")
+
+        except Exception as e:
+            self.logger.exception("Failed to Add Season Column")
+
+    def sort_using_column(self, column: str) -> pd.DataFrame:
+        """
+            Returns the objects DataFrame sorted with the specified column, default dataframe sorting
+            Parameters
+            ----------
+            column:
+                Type: str
+            Returns
+            -------
+            pd.DataFrame
+        """
+        try:
+            return self.df.sort_values(column)
+        except:
+            print("Failed to sort using the specified column")
+
+    def get_top_sorted_by_column(self, column: str, length: int) -> pd.DataFrame:
+        """
+            Returns the objects DataFrame sorted in descending order and selecting the top ones with the specified column
+            Parameters
+            ----------
+            column:
+                Type: str
+            length:
+                Type: int
+            Returns
+            -------
+            pd.DataFrame
+        """
+        try:
+            pre_df = self.df.sort_values(
+                column, ascending=False).iloc[:length, :]
+            return pd.DataFrame(pre_df.loc[:, column])
+        except:
+            print("Failed to sort using the specified column and get the top results")
+
+    def scale_column(self, column: str) -> pd.DataFrame:
+        """
+            Returns the objects DataFrames column scaled using MinMaxScaler
+            Parameters
+            ----------
+            column:
+                Type: str
+            Returns
+            -------
+            pd.DataFrame
+        """
+        try:
+            scale_column_df = pd.DataFrame(self.df[column])
+            scale_column_values = scale_column_df.values
+            print(
+                f'The max and min values of the scaled {column} column are:\n\tmax: {scale_column_df.iloc[:, 0].min()}\n\tmin: {scale_column_df.iloc[:, 0].max()}')
+            min_max_scaler = MinMaxScaler()
+            scaled_values = min_max_scaler.fit_transform(scale_column_values)
+            self.df[column] = scaled_values
+
+            return self.df
+
+        except:
+            print("Failed to scale the column")
