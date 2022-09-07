@@ -298,7 +298,7 @@ class DataCleaner:
         except:
             print("Cant fix outliers for each column")
 
-    def replace_outlier_with_median(self, dataFrame: pd.DataFrame, feature: Str) -> pd.DataFrame:
+    def replace_outlier_with_median(self, dataFrame: pd.DataFrame, feature: str) -> pd.DataFrame:
 
         Q1 = dataFrame[feature].quantile(0.25)
         Q3 = dataFrame[feature].quantile(0.75)
