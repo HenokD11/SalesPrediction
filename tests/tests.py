@@ -7,8 +7,11 @@ import pandas.api.types as ptypes
 
 sys.path.insert(0, '../scripts/')
 sys.path.append(os.path.abspath(os.path.join('scripts')))
+sys.path.append(os.path.abspath(os.path.join('..')))
 
-from data_preprocessing import data_preProcessing_script
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
+
+from scripts.data_preprocessing import data_preProcessing_script
 
 
 df = pd.DataFrame({'numbers': [2, 4, 6, 7, 9], 'letters': ['a', 'b', 'c', 'd', 'e'],
