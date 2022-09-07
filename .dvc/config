@@ -1,4 +1,6 @@
 [core]
-    remote = preprocessing
+    remote = storage
 ['remote "preprocessing"']
     url = https://github.com/HenokD11/SalesPrediction/tree/preprocessing
+['remote "storage"']
+    url = gdrive://1j_berFyfYwFivhMOW2uye3mX_D4XGc5M
