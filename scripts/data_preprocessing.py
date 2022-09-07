@@ -17,8 +17,7 @@ class data_preProcessing_script:
 
     def __init__(self, df: pd.DataFrame) -> None:
         self.df = df
-        self.logger = App_Logger(
-            "logs/data_preProcessing.log").get_app_logger()
+        self.logger = App_Logger("../logs/data_preProcessing.log").get_app_logger()
 
     def drop_duplicates(self) -> pd.DataFrame:
         droped = self.df[self.df.duplicated()].index
@@ -90,7 +89,7 @@ class data_preProcessing_script:
         missing_df = pd.DataFrame(col_null, columns=['total_missing_values'])
         missing_df['missing_percentage'] = missing_percentage
         self.logger.info(f"Showing missing percentage")
-        return 
+        return missing_df
 
 
     
