@@ -1,0 +1,41 @@
+2022-09-07 11:27:06,275 : INFO : log_helper : Showing data information
+2022-09-07 11:28:37,028 : INFO : log_helper : Showing data information
+2022-09-07 11:28:54,527 : INFO : log_helper : Showing data information
+2022-09-07 11:31:45,193 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 11:32:43,606 : INFO : log_helper : Colums with missing values: []
+2022-09-07 11:33:03,392 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 11:34:54,448 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:35:15,622 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:37:47,049 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:37:58,513 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:38:15,058 : INFO : log_helper : Colums with missing values: []
+2022-09-07 11:38:20,005 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 11:38:23,142 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:39:44,908 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:40:39,015 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:40:59,299 : INFO : log_helper : Showing data information
+2022-09-07 11:40:59,466 : INFO : log_helper : Showing data information
+2022-09-07 11:40:59,878 : INFO : log_helper : Showing data information
+2022-09-07 11:41:01,582 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 11:41:02,660 : INFO : log_helper : Colums with missing values: []
+2022-09-07 11:41:03,019 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 11:41:04,786 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:41:07,520 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:43:09,952 : INFO : log_helper : Showing data information
+2022-09-07 11:43:10,959 : INFO : log_helper : Showing data information
+2022-09-07 11:43:11,771 : INFO : log_helper : Showing data information
+2022-09-07 11:43:13,824 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 11:43:14,852 : INFO : log_helper : Colums with missing values: []
+2022-09-07 11:43:15,339 : INFO : log_helper : Colums with missing values: ['Open']
+2022-09-07 11:43:17,299 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:43:22,292 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:44:16,788 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:46:38,222 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:46:53,939 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:47:00,739 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:47:19,969 : INFO : log_helper : Showing missing percentage
+2022-09-07 11:48:14,318 : INFO : log_helper : Showing datatypes
+2022-09-07 11:48:28,893 : INFO : log_helper : Showing datatypes
+2022-09-07 11:48:40,653 : INFO : log_helper : Showing datatypes
+2022-09-07 11:50:23,716 : INFO : log_helper : Showing datatypes
+2022-09-07 11:50:56,284 : INFO : log_helper : Showing datatypes
