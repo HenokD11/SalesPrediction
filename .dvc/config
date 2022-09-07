@@ -1,0 +1,4 @@
+[core]
+    remote = preprocessing
+['remote "preprocessing"']
+    url = https://github.com/HenokD11/SalesPrediction/tree/preprocessing
