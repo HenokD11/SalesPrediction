@@ -26,4 +26,4 @@ USER appuser
 ENTRYPOINT ["streamlit", "run"]
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["app.py"]
+CMD ["app.py"] 
