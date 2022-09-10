@@ -22,3 +22,5 @@ ValueError: cannot insert WeekDay, already exists
 2022-09-10 17:01:15,813 : INFO : log_helper : Successfully Added DaysAfterHoliday Column
 2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
 2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
+2022-09-10 17:04:18,511 : INFO : log_helper : Successfully Added Season Column
+2022-09-10 17:04:18,511 : INFO : log_helper : Successfully Added Season Column

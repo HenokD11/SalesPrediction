@@ -258,3 +258,43 @@
 2022-09-07 20:46:14,718 : INFO : log_helper : DataFrame optimized
 2022-09-07 20:47:00,318 : INFO : log_helper : Successfully changed columns type to int64
 2022-09-07 20:47:00,543 : INFO : log_helper : DataFrame optimized
+2022-09-10 16:39:29,687 : INFO : log_helper : Showing data information
+2022-09-10 16:39:29,687 : INFO : log_helper : Showing data information
+2022-09-10 16:40:39,469 : INFO : log_helper : Showing data information
+2022-09-10 16:40:39,469 : INFO : log_helper : Showing data information
+2022-09-10 16:43:07,514 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-10 16:43:07,514 : INFO : log_helper : Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-10 16:43:19,890 : INFO : log_helper : Showing missing percentage
+2022-09-10 16:43:19,890 : INFO : log_helper : Showing missing percentage
+2022-09-10 16:45:59,468 : INFO : log_helper : Showing missing percentage
+2022-09-10 16:45:59,468 : INFO : log_helper : Showing missing percentage
+2022-09-10 16:46:32,052 : INFO : log_helper : Colums with missing values: []
+2022-09-10 16:46:32,052 : INFO : log_helper : Colums with missing values: []
+2022-09-10 16:55:55,212 : INFO : log_helper : Outlier for Customers is fixed
+2022-09-10 16:55:55,212 : INFO : log_helper : Outlier for Customers is fixed
+2022-09-10 16:55:55,277 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-10 16:55:55,277 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-10 17:00:17,435 : INFO : log_helper : Successfully Added WeekDay Column to the DataFrame
+2022-09-10 17:00:17,435 : INFO : log_helper : Successfully Added WeekDay Column to the DataFrame
+2022-09-10 17:00:23,096 : ERROR : log_helper : Failed to Add WeekDay Column
+Traceback (most recent call last):
+  File "c:\Users\hp\SalesPrediction\notebooks\../scripts\data_manipulation.py", line 35, in add_week_day
+    self.df.insert(date_index + 1, 'WeekDay',
+  File "c:\Users\hp\SalesPrediction\.venv\lib\site-packages\pandas\core\frame.py", line 4443, in insert
+    raise ValueError(f"cannot insert {column}, already exists")
+ValueError: cannot insert WeekDay, already exists
+2022-09-10 17:00:23,096 : ERROR : log_helper : Failed to Add WeekDay Column
+Traceback (most recent call last):
+  File "c:\Users\hp\SalesPrediction\notebooks\../scripts\data_manipulation.py", line 35, in add_week_day
+    self.df.insert(date_index + 1, 'WeekDay',
+  File "c:\Users\hp\SalesPrediction\.venv\lib\site-packages\pandas\core\frame.py", line 4443, in insert
+    raise ValueError(f"cannot insert {column}, already exists")
+ValueError: cannot insert WeekDay, already exists
+2022-09-10 17:00:57,592 : INFO : log_helper : Successfully Added DaysToHoliday Column
+2022-09-10 17:00:57,592 : INFO : log_helper : Successfully Added DaysToHoliday Column
+2022-09-10 17:01:15,813 : INFO : log_helper : Successfully Added DaysAfterHoliday Column
+2022-09-10 17:01:15,813 : INFO : log_helper : Successfully Added DaysAfterHoliday Column
+2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
+2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
+2022-09-10 17:04:18,511 : INFO : log_helper : Successfully Added Season Column
+2022-09-10 17:04:18,511 : INFO : log_helper : Successfully Added Season Column
