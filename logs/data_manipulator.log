@@ -1,0 +1,24 @@
+2022-09-10 16:55:55,212 : INFO : log_helper : Outlier for Customers is fixed
+2022-09-10 16:55:55,277 : INFO : log_helper : Outlier for Sales is fixed
+2022-09-10 17:00:17,435 : INFO : log_helper : Successfully Added WeekDay Column to the DataFrame
+2022-09-10 17:00:17,435 : INFO : log_helper : Successfully Added WeekDay Column to the DataFrame
+2022-09-10 17:00:23,096 : ERROR : log_helper : Failed to Add WeekDay Column
+Traceback (most recent call last):
+  File "c:\Users\hp\SalesPrediction\notebooks\../scripts\data_manipulation.py", line 35, in add_week_day
+    self.df.insert(date_index + 1, 'WeekDay',
+  File "c:\Users\hp\SalesPrediction\.venv\lib\site-packages\pandas\core\frame.py", line 4443, in insert
+    raise ValueError(f"cannot insert {column}, already exists")
+ValueError: cannot insert WeekDay, already exists
+2022-09-10 17:00:23,096 : ERROR : log_helper : Failed to Add WeekDay Column
+Traceback (most recent call last):
+  File "c:\Users\hp\SalesPrediction\notebooks\../scripts\data_manipulation.py", line 35, in add_week_day
+    self.df.insert(date_index + 1, 'WeekDay',
+  File "c:\Users\hp\SalesPrediction\.venv\lib\site-packages\pandas\core\frame.py", line 4443, in insert
+    raise ValueError(f"cannot insert {column}, already exists")
+ValueError: cannot insert WeekDay, already exists
+2022-09-10 17:00:57,592 : INFO : log_helper : Successfully Added DaysToHoliday Column
+2022-09-10 17:00:57,592 : INFO : log_helper : Successfully Added DaysToHoliday Column
+2022-09-10 17:01:15,813 : INFO : log_helper : Successfully Added DaysAfterHoliday Column
+2022-09-10 17:01:15,813 : INFO : log_helper : Successfully Added DaysAfterHoliday Column
+2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
+2022-09-10 17:01:33,761 : INFO : log_helper : Successfully Added MonthTiming Column
