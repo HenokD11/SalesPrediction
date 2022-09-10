@@ -47,35 +47,27 @@ The repository has a number of files including python scripts, jupyter notebooks
     the folder where model pickle files and model reference csv files are stored
 
 **notebooks:**
-
-    ~~EDA.ipynb:~~ a jupyter notebook for exploring the data
-    ~~ML_DataPrep.ipynb:~~ a jupyter notebook for preprocessing the data for ML and further analysis
-    ~~lstm.ipynb:~~ a jupyter notebook training an LSTM model for forecasting purpose
-    ~~train_regression.ipynb:~~ a jupyter notebook training an Regression models for prediction purpose
+    *EDA.ipynb:* a jupyter notebook for exploring the data
+    *ML_DataPrep.ipynb:* a jupyter notebook for preprocessing the data for ML and further analysis
+    *preprocessing:* cleaning pandas dataframes
+    *lstm.ipynb:* a jupyter notebook training an LSTM model for forecasting purpose
+    *train_regression.ipynb:* a jupyter notebook training an Regression models for prediction purpose
 
 **scripts**
-
-    ML_modelling_utils.py: a python script for handle model name creation and manipulation
-    data_cleaner.py: a python script for cleaning pandas dataframes
-    data_information.py: a python script for selecting data from a pandas dataframe
-    data_loader.py: a python script for loading csv and excel files to a dataframe
-    data_manipulation.py: a python script for manipulating dataframes
-    grapher.py: a python script for plotting dataframes
-    multiapp.py: a python script for creating a multipaged streamlit app
-    logger_creator.py: a python script that creates python based logger and helps user log different messages
-    results_pickler.py: a python script for collecting and pickling data
-    utlity_functions.py: a python script for other utility functions
-    dvc_data_loader.py: a python script for loading dvc managed source data
+    *ML_modelling_utils.py:* a python script for handle model name creation and manipulation
+    *cleaner.py:* a python script for cleaning pandas dataframes
+    *data_preprocessing.py:* a python script for cleaning pandas dataframes
+    *data_manipulation.py:* a python script for manipulating dataframes
+    *multiapp.py:* a python script for creating a multipaged streamlit app
+    *log_helper.py:* a python script that creates python based logger and helps user log different messages
 
 **tests:**
 
     the folder containing unit tests for components in the scripts
 
 **root folder:**
-
-    requirements.txt: a text file lsiting the projet's dependancies
-    travis.yml: a configuration file for Travis CI
-    app.py: entry file for the streamlit application
-    setup.py: a configuration file for installing the scripts as a package
-    README.md: Markdown text with a brief explanation of the project and the repository structure.
+    *requirements.txt:* a text file lsiting the projet's dependancies
+    *app.py:* entry file for the streamlit application
+    *setup.py:* a configuration file for installing the scripts as a package
+    *README.md:* Markdown text with a brief explanation of the project and the repository structure.
 
