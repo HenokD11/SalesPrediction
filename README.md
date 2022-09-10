@@ -49,18 +49,27 @@ The repository has a number of files including python scripts, jupyter notebooks
 **notebooks:**
 
 *EDA.ipynb:* a jupyter notebook for exploring the data
+
 *ML_DataPrep.ipynb:* a jupyter notebook for preprocessing the data for ML and further analysis
+
 *preprocessing:* cleaning pandas dataframes
+
 *lstm.ipynb:* a jupyter notebook training an LSTM model for forecasting purpose
+
 *train_regression.ipynb:* a jupyter notebook training an Regression models for prediction purpose
 
 **scripts**
 
 *ML_modelling_utils.py:* a python script for handle model name creation and manipulation
+
 *cleaner.py:* a python script for cleaning pandas dataframes
+
 *data_preprocessing.py:* a python script for cleaning pandas dataframes
+
 *data_manipulation.py:* a python script for manipulating dataframes
+
 *multiapp.py:* a python script for creating a multipaged streamlit app
+
 *log_helper.py:* a python script that creates python based logger and helps user log different messages
 
 **tests:**
@@ -70,7 +79,10 @@ The repository has a number of files including python scripts, jupyter notebooks
 **root folder:**
 
 *requirements.txt:* a text file lsiting the projet's dependancies
+
 *app.py:* entry file for the streamlit application
+
 *setup.py:* a configuration file for installing the scripts as a package
+
 *README.md:* Markdown text with a brief explanation of the project and the repository structure.
 
