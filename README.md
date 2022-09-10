@@ -29,30 +29,31 @@ Your job is to build and serve an end-to-end product that delivers this predicti
 # Project Structure
 
 The repository has a number of files including python scripts, jupyter notebooks and text files. Here is their structure with a brief explanation.
-#data:
+
+**data:**
 
     the folder where the dataset csv files are stored
 
-.github:
+**.github:**
 
     the folder where github actions and CML workflow is integrated
 
-.dvc:
+**.dvc:**
 
     the folder where dvc is managed and configured for remote data version control
 
-models:
+**models:**
 
     the folder where model pickle files and model reference csv files are stored
 
-notebooks:
+**notebooks:**
 
-    data_exploration.ipynb: a jupyter notebook for exploring the data
-    data_preprocessing.ipynb: a jupyter notebook for preprocessing the data for ML and further analysis
-    lstm_forecasting.ipynb: a jupyter notebook training an LSTM model for forecasting purpose
-    train_regression.ipynb: a jupyter notebook training an Regression models for prediction purpose
+    ~~EDA.ipynb:~~ a jupyter notebook for exploring the data
+    ~~ML_DataPrep.ipynb:~~ a jupyter notebook for preprocessing the data for ML and further analysis
+    ~~lstm.ipynb:~~ a jupyter notebook training an LSTM model for forecasting purpose
+    ~~train_regression.ipynb:~~ a jupyter notebook training an Regression models for prediction purpose
 
-scripts
+**scripts**
 
     ML_modelling_utils.py: a python script for handle model name creation and manipulation
     data_cleaner.py: a python script for cleaning pandas dataframes
@@ -66,11 +67,11 @@ scripts
     utlity_functions.py: a python script for other utility functions
     dvc_data_loader.py: a python script for loading dvc managed source data
 
-tests:
+**tests:**
 
     the folder containing unit tests for components in the scripts
 
-root folder
+**root folder:**
 
     requirements.txt: a text file lsiting the projet's dependancies
     travis.yml: a configuration file for Travis CI
